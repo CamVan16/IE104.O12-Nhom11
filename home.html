@@ -5,22 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./home_css.css">
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./home.js">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <section id="header">
         <nav>
-            <ul>
-                <li><a href="./home.html"><img src="./Fragrance Eleven-logos.jpeg" alt="">FragraneceEleven</a></li>
-                <li><a href="">Trang chủ</a></li>
-                <li><a href="">Cửa hàng</a></li>
-                <li><a href="">Tin tức</a></li>
-                <li><a href="">Giới thiệu</a></li>
-                <li><a href="">Liên hệ</a></li>
-                <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li><a href=""><i class="fa-solid fa-right-to-bracket"></i></a></li>
-            </ul>
-        </nav>
-    </header>
+            <div class="container">
+                <ul>
+                    <li><img src="./Fragrance Eleven-logos.jpeg" alt=""></li>
+                    <li>FragraneceEleven</li>
+                    <li><a href="">Trang chủ</a></li>
+                    <li><a href="">Cửa hàng</a></li>
+                    <li><a href="">Tin tức</a></li>
+                    <li><a href="">Giới thiệu</a></li>
+                    <li><a href="">Liên hệ</a></li>
+                    <li><a href=""><img src="cart-shopping-solid.svg" alt=""></a></li>
+                    <li><a href=""><img src="right-to-bracket-solid.svg" alt=""></a></li>
+                </ul>
+            </div>  
+        </nav> 
+    </section>
+    <div class="slide-banner">
+        <div class="menu">
+            <label for="banner-1-th"></label>
+            <label for="banner-2-th"></label>
+            <label for="banner-3-th"></label>
+        </div>
+        <input id="banner-1-th" type="radio" name="slides" checked>
+            <div class="banner banner-1">
+                <img src="./banner1.png" alt="">
+            </div>
+          
+        <input id="banner-2-th" type="radio" name="slides">
+            <div class="banner banner-2">
+                <img src="./banner2.png" alt="">
+            </div>
+          
+        <input id="banner-3-th" type="radio" name="slides">
+            <div class="banner banner-3">
+                <img src="./banner3.png" alt="">
+            </div>
+    </div>
 </body>
 </html>
