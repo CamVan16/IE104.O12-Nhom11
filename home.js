@@ -1,18 +1,23 @@
-const slider = document.querySelector('.slider');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-let slideIndex = 0;
+document.addEventListener("DOMContentLoaded", function() {
+  let currentSlide = 1;
+  const totalSlides = 3;
+  const slideDuration = 2000; // Thời gian giữa các chuyển đổi (5 giây trong ví dụ này)
 
-nextBtn.addEventListener('click', () => {
-  slideIndex = (slideIndex + 1) % 2; // Số 2 phụ thuộc vào số lượng hình ảnh trong slider
-  updateSlider();
+  function nextSlide() {
+    currentSlide = (currentSlide % totalSlides) + 1;
+    document.getElementById(`banner-${currentSlide}-th`).checked = true;
+  }
+
+  setInterval(nextSlide, slideDuration);
 });
 
-prevBtn.addEventListener('click', () => {
-  slideIndex = (slideIndex - 1 + 2) % 2; // Số 2 phụ thuộc vào số lượng hình ảnh trong slider
-  updateSlider();
-});
+// JavaScript
+document.addEventListener("DOMContentLoaded", function() {
+  const barIcon = document.getElementById("bar");
+  const menuList = document.querySelector(".menu-list");
 
-function updateSlider() {
-  slider.style.transform = `translateX(-${slideIndex * 50}%)`;
-}
+  barIcon.addEventListener("click", function() {
+    menuList.classList.toggle("active");
+    barIcon.classList.toggle("active");
+  });
+});

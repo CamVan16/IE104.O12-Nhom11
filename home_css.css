@@ -16,47 +16,47 @@ body{
     justify-content: center;
 }
 #header{
-    background-color: rebeccapurple;
+    background-color: rgb(179, 41, 78);
     width: 100%;
     position: sticky;
     display: inline-block;   
-    z-index: 999;
+    z-index: 1800;
     top: 0;
 }
-ul {
+.container ul {
     list-style-type: none;
 }
-a{
+.container a{
     text-decoration: none;
 }
-ul{
+.container ul{
     display: flex;
     justify-content: space-between;
     font-size: 35px;
 }
-nav ul{
+.container nav ul{
     align-items: center;
 }
-ul li a{
+.container ul li a{
     color: black;
 }
-a:hover{
+.container a:hover{
     color: #8c6663;
     font-weight: bold;
     text-decoration: underline;
 }
 
-ul li:first-child{
+.container ul li:first-child{
     display: flex;
     align-items: center;
     line-height: 80px;
 }
-ul li:first-child img{
+.container ul li:first-child img{
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
-ul li:nth-child(2){
+.container ul li:nth-child(2){
     font-family: 'Dancing Script', cursive;
     font-size: 60px;
     padding-left: 0px;
@@ -64,14 +64,47 @@ ul li:nth-child(2){
     margin-right: 300px;
     line-height: 40px;
 }
-ul li:nth-last-child(-n+2){
+.container ul li:nth-last-child(-n+2){
     width: 30px;
     height: 30px;
 }
-ul li:nth-last-child(-n+7){
+.container ul li:nth-last-child(-n+7){
     padding-left: 20px;
 }
-/* --------------section---------------- */
+#bag .cart-amount {
+  position: absolute;
+  background-color: red;
+  color: white;
+  height: 23px;
+  line-height: 23px;
+  padding: 0 0px;
+  border-radius: 25px;
+  top: 20px;
+  margin-left: 20px;
+}
+.mobile img{
+  width: 20px;
+  height: 20px;
+}
+.mobile .cart-amount {
+  position: absolute;
+  background-color: red;
+  color: white;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 0px;
+  border-radius: 25px;
+  top: 90px;
+  margin-left: 20px;
+}
+.mobile{
+  height: 50px;
+}
+/* -----------------section-body---------------- */
+#body{
+  height: 1000px;
+}
+/* --------------section-banner---------------- */
 
 .slide-banner{
     width: 100%;
@@ -79,8 +112,7 @@ ul li:nth-last-child(-n+7){
     position: relative;
     overflow: hidden; 
     text-align: center;
-    top: 0;
-
+    top: 0px;
 }
 
 .menu {
@@ -125,4 +157,211 @@ ul li:nth-last-child(-n+7){
 .banner img{
     width: 100%;
     height: 500px;
+}
+/* -------------footer----------------- */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 30px 20px 30px;
+    color: #2f2f2f;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    background-image: url('./pink-flower.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center; 
+
+}
+
+.footer-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    max-width: max-content;
+    background-color: #088178;
+    border-radius: 4px;
+    color: #fff;
+    line-height: 0;
+    margin: 16px 0;
+    font-size: 20px;
+    padding: 10px 20px;
+} 
+.footer-nav> * {
+    flex: 1 1 25%; 
+    margin-right: 20px; 
+}
+
+.thanks-addr,
+.footer-nav{
+    margin-bottom: 20px; 
+}
+
+.footer-addr h2,
+.nav-title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.footer-nav .nav-item .row {
+    display: flex;
+    flex-direction: column;
+}
+.footer-nav .nav-item {
+    flex: 1; 
+    margin-right: 20px;
+    margin-top:-20px;
+}
+.nav-ul {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-ul li {
+    margin-bottom: 10px;
+}
+
+.footer-nav li  {
+    list-style: none;
+    text-decoration: none ;
+    font-size: 20px;
+    color: #090909;
+}
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 30px 20px 30px;
+    color: #2f2f2f;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+}
+
+.thanks-addr,
+.footer-nav {
+    flex: 1;
+    margin-right: 20px; 
+}
+.footer-thanks p{
+  font-size: 20px;
+  color: white;
+}
+.thanks-addr {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+.nav-item {
+    flex: 1;
+    margin-bottom: 20px;
+}
+.footer-add{
+    margin-top: 20px;
+}
+.legal {
+    flex-basis: calc(100% - 40px); 
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+br{
+    color: black;
+    
+}
+
+/* Điều chỉnh giao diện header khi màn hình nhỏ hơn 768px */
+@media (max-width: 780px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container ul {
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+  }
+  
+  .container ul li:first-child img {
+    width: 60px;
+    height: 60px;
+    margin-right: 0;
+  }
+  
+  .container ul li:nth-child(2) {
+    font-size: 40px;
+    margin-right: 0;
+  }
+  .menu-list li:nth-child(n+3):nth-child(-n+9) {
+    display: none;
+  }
+  /* CSS cho dropdown menu */
+  #bar.active ~ .menu-list li:nth-child(n+3):nth-child(-n+7) {
+    display: block;
+  }
+  .menu-list.active li:nth-child(n+3):nth-child(-n+7) {
+    display: block;
+  }
+  /* CSS cho biểu tượng thanh bar */
+  #bar {
+    cursor: pointer;
+  }
+  #bar.active {
+    display: none;
+  }
+}
+/* Ẩn .mobile và #bar khi màn hình lớn hơn 768px */
+@media (min-width: 781px) {
+  .mobile {
+    display: none;
+  }
+}
+  
+  /* Điều chỉnh giao diện banner khi màn hình nhỏ hơn 768px */
+@media (max-width: 780px) {
+  .slide-banner {
+    height: 250px;
+  }
+  
+  .menu label {
+    width: 10px;
+    height: 10px;
+    margin: 0 .1em 1em;
+  }
+  
+  .banner img {
+    height: 250px;
+  }
+}
+  
+  /* Điều chỉnh giao diện footer khi màn hình nhỏ hơn 768px */
+@media (max-width: 780px) {
+  .footer {
+    padding: 10px;
+  }
+  
+  .footer-nav,.thanks-addr {
+    flex: 1;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .footer-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+  
+  .footer-nav> * {
+    flex: 1 1 50%;
+  }
+}
+/* Ẩn .mobile và #bar khi màn hình lớn hơn 768px */
+@media (min-width: 781px) {
+  .mobile {
+    display: none;
+  }
 }
