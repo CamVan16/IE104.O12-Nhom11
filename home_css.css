@@ -18,9 +18,11 @@ body{
 #header{
     background-color: rgb(179, 41, 78);
     width: 100%;
-    position: sticky;
     display: inline-block;   
-    z-index: 1800;
+    /* display: flex;
+    flex-direction: row; */
+    position: sticky;
+    z-index: 999;
     top: 0;
 }
 .container ul {
@@ -279,8 +281,7 @@ br{
     flex-direction: column;
     align-items: center;
   }
-  
-  .container ul {
+  .container ul{
     flex-direction: column;
     align-items: center;
     font-size: 24px;
@@ -289,30 +290,48 @@ br{
   .container ul li:first-child img {
     width: 60px;
     height: 60px;
-    margin-right: 0;
+    margin-right: 50px;
   }
   
   .container ul li:nth-child(2) {
     font-size: 40px;
-    margin-right: 0;
+    margin-right: 50px;
   }
   .menu-list li:nth-child(n+3):nth-child(-n+9) {
     display: none;
   }
   /* CSS cho dropdown menu */
-  #bar.active ~ .menu-list li:nth-child(n+3):nth-child(-n+7) {
-    display: block;
-  }
   .menu-list.active li:nth-child(n+3):nth-child(-n+7) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 130px; /* điều chỉnh khoảng cách từ đỉnh màn hình xuống */
+    left: 20px;
+    width: 100px;
+    background-color:#8c6663; /* màu nền của dropdown menu */
+    z-index: 1;
+}
+
+.menu-list.active li:nth-child(n+3):nth-child(-n+7) {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Đường kẻ ngăn cách giữa các mục */
+}
+
+/* Thêm style cho từng mục trong dropdown menu */
+.menu-list.active li:nth-child(n+3):nth-child(-n+7) a {
+    color:palegoldenrod; /* Màu chữ */
+    text-decoration: none;
+}
+
+  #bar.active ~ .menu-list li:nth-child(n+3):nth-child(-n+7) {
     display: block;
   }
   /* CSS cho biểu tượng thanh bar */
   #bar {
     cursor: pointer;
   }
-  #bar.active {
-    display: none;
-  }
+  
 }
 /* Ẩn .mobile và #bar khi màn hình lớn hơn 768px */
 @media (min-width: 781px) {

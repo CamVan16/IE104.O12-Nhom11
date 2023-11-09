@@ -12,12 +12,20 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // JavaScript
+// document.addEventListener("DOMContentLoaded", function() {
+//   const barIcon = document.getElementById("bar");
+//   const menuList = document.querySelector(".menu-list");
+
+//   barIcon.addEventListener("click", function() {
+//     menuList.classList.toggle("active");
+//     barIcon.classList.toggle("active");
+//   });
+// });
 document.addEventListener("DOMContentLoaded", function() {
   const barIcon = document.getElementById("bar");
   const menuList = document.querySelector(".menu-list");
 
   barIcon.addEventListener("click", function() {
     menuList.classList.toggle("active");
-    barIcon.classList.toggle("active");
   });
 });
