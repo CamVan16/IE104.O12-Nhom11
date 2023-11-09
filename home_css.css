@@ -17,6 +17,9 @@ body{
 }
 #header{
     background-color: rgb(179, 41, 78);
+    /* background-color: #F0A0A1; */
+    /* background-color: #8c6663; */
+    color: palegoldenrod;
     width: 100%;
     display: inline-block;   
     /* display: flex;
@@ -40,7 +43,8 @@ body{
     align-items: center;
 }
 .container ul li a{
-    color: black;
+    /* color: black; */
+    color: palegoldenrod;
 }
 .container a:hover{
     color: #8c6663;
@@ -275,18 +279,15 @@ br{
     
 }
 
-/* Điều chỉnh giao diện header khi màn hình nhỏ hơn 768px */
+/* Điều chỉnh giao diện header khi màn hình nhỏ hơn 780px */
 @media (max-width: 780px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .container ul{
+  .container ul {
     flex-direction: column;
     align-items: center;
     font-size: 24px;
+    margin-top: 0;
   }
-  
+
   .container ul li:first-child img {
     width: 60px;
     height: 60px;
@@ -302,27 +303,34 @@ br{
   }
   /* CSS cho dropdown menu */
   .menu-list.active li:nth-child(n+3):nth-child(-n+7) {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 130px; /* điều chỉnh khoảng cách từ đỉnh màn hình xuống */
-    left: 20px;
+    position: relative;
+    display: inline-block;
+    top: 40px; 
+    left: -120px;
     width: 100px;
-    background-color:#8c6663; /* màu nền của dropdown menu */
+    background-color:#8c6663bb;
     z-index: 1;
-}
-
-.menu-list.active li:nth-child(n+3):nth-child(-n+7) {
+  }
+  .menu-list.active li:nth-child(n+1):nth-child(-n+2) {
+    position:relative;
+    display: inline-block;
+    top: 0; 
+    height: 60px;
+  }
+  .menu-list.active li:nth-child(n+3):nth-child(-n+7) {
     text-align: center;
     padding: 10px;
-    border-bottom: 1px solid #ccc; /* Đường kẻ ngăn cách giữa các mục */
-}
-
-/* Thêm style cho từng mục trong dropdown menu */
-.menu-list.active li:nth-child(n+3):nth-child(-n+7) a {
-    color:palegoldenrod; /* Màu chữ */
+    border-bottom: 1px solid #ccc; 
+  }
+  /* Thêm style cho từng mục trong dropdown menu */
+  .menu-list.active li:nth-child(n+3):nth-child(-n+7) a {
+    color:palegoldenrod; 
     text-decoration: none;
-}
+    &:hover {
+      font-size: 20px;
+      color: #fff;
+    }
+  }
 
   #bar.active ~ .menu-list li:nth-child(n+3):nth-child(-n+7) {
     display: block;
@@ -330,17 +338,9 @@ br{
   /* CSS cho biểu tượng thanh bar */
   #bar {
     cursor: pointer;
-  }
-  
+  } 
 }
-/* Ẩn .mobile và #bar khi màn hình lớn hơn 768px */
-@media (min-width: 781px) {
-  .mobile {
-    display: none;
-  }
-}
-  
-  /* Điều chỉnh giao diện banner khi màn hình nhỏ hơn 768px */
+  /* Điều chỉnh giao diện banner khi màn hình nhỏ hơn 780px */
 @media (max-width: 780px) {
   .slide-banner {
     height: 250px;
@@ -356,11 +356,10 @@ br{
     height: 250px;
   }
 }
-  
-  /* Điều chỉnh giao diện footer khi màn hình nhỏ hơn 768px */
+  /* Điều chỉnh giao diện footer khi màn hình nhỏ hơn 780px */
 @media (max-width: 780px) {
   .footer {
-    padding: 10px;
+    padding: 5px;
   }
   
   .footer-nav,.thanks-addr {
@@ -373,9 +372,26 @@ br{
     font-size: 16px;
     padding: 8px 16px;
   }
-  
+  .footer-thanks p{
+    font-size: 17px;
+  }
   .footer-nav> * {
     flex: 1 1 50%;
+  }
+  .footer-nav p{
+    font-size: 12px;
+  }
+  .footer-nav i{
+    flex-direction: row;
+    width: 20px;
+    height: 15px;
+    padding: 10px 25px 15px 0px;
+  }
+  .footer h2{
+    font-size: 20px;
+  }
+  .footer h1{
+    font-size: 30px;
   }
 }
 /* Ẩn .mobile và #bar khi màn hình lớn hơn 768px */
