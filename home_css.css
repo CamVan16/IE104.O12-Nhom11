@@ -1,107 +1,95 @@
-html,body{
+*{
     width: 100%;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 body{
     display: block;
 }
 /* ----------------navbar------------ */
-.container{
-    max-width: 1800px;
-    margin: 0;
-    padding: 0;
-    height: 100px;
-    display: flex; 
-    justify-content: center;
-}
 #header{
     background-color: rgb(179, 41, 78);
-    /* background-color: #F0A0A1; */
-    /* background-color: #8c6663; */
-    color: palegoldenrod;
     width: 100%;
-    display: inline-block;   
-    /* display: flex;
-    flex-direction: row; */
+    height: 70px;
+    display: flex;
+    /* display: inline-block; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     position: sticky;
     z-index: 999;
     top: 0;
+    left: 0;
+    padding: 4px 20px;
 }
-.container ul {
-    list-style-type: none;
+#header a{
+  color: palegoldenrod;
 }
-.container a{
-    text-decoration: none;
+#header > a{
+  width: 50%;
+  font-size: 40px;
+  text-decoration: none;
 }
-.container ul{
-    display: flex;
-    justify-content: space-between;
-    font-size: 35px;
+#header i{
+  color: palegoldenrod;
 }
-nav .container ul{
-    align-items: center;
+.menu-list{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 65%;
 }
-.container ul li a{
-    /* color: black; */
-    color: palegoldenrod;
+.menu-list li{
+  display: inline-block;
+  list-style-type: none;
+  padding: 0 10px;
+  position: relative;
+  text-align: center;
+  width: 170px;
 }
-.container a:hover{
-    color: #8c6663;
-    font-weight: bold;
-    text-decoration: underline;
+.menu-list li a{
+  display: block;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 0;
 }
-
-.container ul li:first-child{
-    display: flex;
-    align-items: center;
-    line-height: 80px;
+.menu-list li:nth-last-child(-n+2){
+  width: 50px;
 }
-.container ul li:first-child img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+.menu-list li:hover{
+  color: white;
 }
-.container ul li:nth-child(2){
-    font-family: 'Dancing Script', cursive;
-    font-size: 60px;
-    padding-left: 0px;
-    margin-left: 0px; 
-    margin-right: 300px;
-    line-height: 40px;
+#xmark{
+  display: none;
 }
-.container ul li:nth-last-child(-n+2){
-    width: 30px;
-    height: 30px;
+#cart{
+  position: relative;
+  padding: 0;
 }
-.container ul li:nth-last-child(-n+7){
-    padding-left: 20px;
-}
-#bag .cart-amount {
+#cart-amount{
   position: absolute;
   background-color: red;
   color: white;
+  width: 10px;
   height: 23px;
   line-height: 23px;
-  padding: 0 0px;
+  padding: 0 2px;
   border-radius: 25px;
-  top: 20px;
-  margin-left: 20px;
-}
-.mobile img{
-  width: 20px;
-  height: 20px;
+  top: -5px;
+  right: 0;
 }
 .mobile .cart-amount {
   position: absolute;
   background-color: red;
   color: white;
-  height: 20px;
-  line-height: 20px;
-  padding: 0 0px;
+  width: 10px;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 2px;
   border-radius: 25px;
-  top: 90px;
-  margin-left: 20px;
+  top: 7px;
+  padding: 0.5em 1em;
 }
 .mobile{
   height: 50px;
@@ -293,49 +281,64 @@ width: 146px;
 
 /* Điều chỉnh giao diện header khi màn hình nhỏ hơn 780px */
 @media (max-width: 780px) {
-  .container ul {
+  #header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .mobile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .mobile div i{
+    text-align: right;
+  }
+  #header > a {
+    font-size: 25px;
+    display: block;
+    margin-bottom: 10px; 
+  }
+  #xmark{
+    display: initial;
+    position: absolute;
+    padding: 16px;
+    top: 0;
+    left: 11px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #088178;
+  }
+  .menu-list li{
+    display: none;
+    width: 100%;
+  }
+  .menu-list.active {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 24px;
-    margin-top: 0;
   }
-
-  .container ul li:first-child img {
-    width: 60px;
-    height: 60px;
-    margin-right: 50px;
-  }
-  
-  .container ul li:nth-child(2) {
-    font-size: 40px;
-    margin-right: 50px;
-  }
-  .menu-list li:nth-child(n+3):nth-child(-n+9) {
-    display: none;
-  }
-  /* CSS cho dropdown menu */
-  .menu-list.active li:nth-child(n+3):nth-child(-n+7) {
+  .menu-list.active li:nth-child(n+1):nth-child(-n+5){
     position: relative;
-    display: inline-block;
-    top: 40px; 
-    left: -120px;
-    width: 100px;
-    background-color:#8c6663bb;
+    display: block;
+    width: 200px;
+    text-align: center;
+    top: 150px; 
+    right: 0;
+    background-color:#f62213f9;
     z-index: 1;
   }
-  .menu-list.active li:nth-child(n+1):nth-child(-n+2) {
-    position:relative;
-    display: inline-block;
-    top: 0; 
-    height: 60px;
+  .menu-list li:nth-last-child(-n+2){
+    display: none;
   }
-  .menu-list.active li:nth-child(n+3):nth-child(-n+7) {
+  .menu-list.active li:nth-child(n+1):nth-child(-n+5) {
     text-align: center;
+    font-size: 15px;
     padding: 10px;
     border-bottom: 1px solid #ccc; 
   }
   /* Thêm style cho từng mục trong dropdown menu */
-  .menu-list.active li:nth-child(n+3):nth-child(-n+7) a {
+  .menu-list.active li:nth-child(n+1):nth-child(-n+5) a {
     color:palegoldenrod; 
     text-decoration: none;
     &:hover {
@@ -344,8 +347,8 @@ width: 146px;
     }
   }
 
-  #bar.active ~ .menu-list li:nth-child(n+3):nth-child(-n+7) {
-    display: block;
+  #bar.active ~ .menu-list li:nth-child(n+1):nth-child(-n+5) {
+    display: flex;
   }
   /* CSS cho biểu tượng thanh bar */
   #bar {

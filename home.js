@@ -14,8 +14,19 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
   const barIcon = document.getElementById("bar");
   const menuList = document.querySelector(".menu-list");
-
-  barIcon.addEventListener("click", function() {
-    menuList.classList.toggle("active");
-  });
+  const xmarkIcon = document.getElementById("xmark");
+  const mobileIcon =document.querySelector(".mobile");
+  if(bar) {
+    barIcon.addEventListener('click', () => {
+      menuList.classList.toggle('active');
+    })
+  }
+  if(close) {
+    xmarkIcon.addEventListener('click', () => {
+      menuList.classList.remove('active');
+    })
+  }
+  // barIcon.addEventListener("click", function() {
+  //   menuList.classList.toggle("active");
+  // });
 });
