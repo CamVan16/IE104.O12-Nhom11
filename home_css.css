@@ -39,7 +39,7 @@ body{
     justify-content: space-between;
     font-size: 35px;
 }
-.container nav ul{
+nav .container ul{
     align-items: center;
 }
 .container ul li a{
@@ -166,117 +166,129 @@ body{
 }
 /* -------------footer----------------- */
 .footer {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 30px 30px 20px 30px;
-    color: #2f2f2f;
-    background-color: #fff;
-    border-top: 1px solid #e5e5e5;
-    background-image: url('./pink-flower.jpg'); 
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center center; 
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 30px 20px 30px;
+  color: #2f2f2f;
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
+  background-image: url('./pink-flower.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center center; 
 
 }
 
 .footer-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    max-width: max-content;
-    background-color: #088178;
-    border-radius: 4px;
-    color: #fff;
-    line-height: 0;
-    margin: 16px 0;
-    font-size: 20px;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  max-width: max-content;
+  background-color: #088178;
+  border-radius: 4px;
+  color: #fff;
+  line-height: 0;
+  margin: 16px 0;
+  font-size: 20px;
+  padding: 10px 20px;
 } 
 .footer-nav> * {
-    flex: 1 1 25%; 
-    margin-right: 20px; 
+  flex: 1 1 25%; 
+  margin-right: 20px; 
 }
 
 .thanks-addr,
 .footer-nav{
-    margin-bottom: 20px; 
+  margin-bottom: 20px; 
 }
 
 .footer-addr h2,
-.nav-title {
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.nav-title h2{
+  font-size: 30px;
+  font-weight: bolder;
+  margin-bottom: 10px;
 }
 .footer-nav .nav-item .row {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .footer-nav .nav-item {
-    flex: 1; 
-    margin-right: 20px;
-    margin-top:-20px;
+  flex: 1; 
+  margin-right: 20px;
+  margin-top:-20px;
 }
 .nav-ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .nav-ul li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-nav li  {
-    list-style: none;
-    text-decoration: none ;
-    font-size: 20px;
-    color: #090909;
+  list-style: none;
+  text-decoration: none ;
+  font-size: 20px;
+  color: #090909;
 }
-.footer {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 30px 30px 20px 30px;
-    color: #2f2f2f;
-    background-color: #fff;
-    border-top: 1px solid #e5e5e5;
-}
+
 
 .thanks-addr,
 .footer-nav {
-    flex: 1;
-    margin-right: 20px; 
+  flex: 1;
+  margin-right: 20px; 
 }
 .footer-thanks p{
-  font-size: 20px;
-  color: white;
+font-size: 25px;
+color: rgb(0, 0, 0);
+font-family: 'Dancing Script', cursive;
+
+}
+.footer-thanks h1{
+font-family: 'Dancing Script', cursive;
+font-weight: bolder;
+font-size: 35px;
 }
 .thanks-addr {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-nav {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 .nav-item {
-    flex: 1;
-    margin-bottom: 20px;
+  flex: 1;
+  margin-bottom: 20px;
+}
+p{
+font-size: 18px;
 }
 .footer-add{
-    margin-top: 20px;
+  margin-top: 20px;
 }
 .legal {
-    flex-basis: calc(100% - 40px); 
+  flex-basis: calc(100% - 40px); 
+  font-size: 18px;
 }
-a{
-    text-decoration: none;
-    color: white;
+.footer-nav a{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
 }
-br{
-    color: black;
-    
+.nav-item .row {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+}
+.nav-item .row img {
+border: 1px solid #088178;
+border-radius: 6px;
+width: 146px;
 }
 
 /* Điều chỉnh giao diện header khi màn hình nhỏ hơn 780px */
@@ -360,6 +372,7 @@ br{
 @media (max-width: 780px) {
   .footer {
     padding: 5px;
+    padding-left: 10px
   }
   
   .footer-nav,.thanks-addr {
@@ -373,13 +386,30 @@ br{
     padding: 8px 16px;
   }
   .footer-thanks p{
-    font-size: 17px;
+    font-size: 20px;
   }
-  .footer-nav> * {
-    flex: 1 1 50%;
+  .footer-thanks h1{
+    font-size: 28px;
   }
+  
+  .footer-nav {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+.nav-item .row img{
+    flex: 1 1 100%;
+}
+.nav-item .row{
+    width: 40%;
+    align-items: flex-start;
+}
+.nav-item
   .footer-nav p{
-    font-size: 12px;
+    font-size: 18px;
+  }
+  .footer-nav a{
+    font-size: 18px;
   }
   .footer-nav i{
     flex-direction: row;
