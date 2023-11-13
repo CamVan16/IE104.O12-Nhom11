@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 body{
     display: block;
@@ -57,8 +58,9 @@ body{
 .menu-list li:nth-last-child(-n+2){
   width: 50px;
 }
-.menu-list li:hover{
-  color: white;
+.menu-list li a:hover,
+.menu-list li a.active {
+  border-bottom: 2px solid palegoldenrod;
 }
 #xmark{
   display: none;
@@ -86,10 +88,11 @@ body{
   width: 10px;
   height: 18px;
   line-height: 18px;
-  padding: 0 2px;
+  /* padding: 0 2px; */
   border-radius: 25px;
   top: 7px;
-  padding: 0.5em 1em;
+  padding: 0 0.05em;
+  right: 100px;
 }
 .mobile{
   height: 50px;
@@ -160,14 +163,11 @@ body{
   color: #2f2f2f;
   background-color: #fff;
   border-top: 1px solid #e5e5e5;
-  background-image: url('./pink-flower.jpg'); 
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center center; 
-
-}
-
-.footer-btn {
+  background-color: #ccc; 
+  
+  }
+  
+  .footer-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,116 +180,130 @@ body{
   margin: 16px 0;
   font-size: 20px;
   padding: 10px 20px;
-} 
-.footer-nav> * {
+  text-decoration: none;
+  } 
+  .footer-nav{
+    padding: 20px;
+    margin: 0;
+  }
+  .footer-nav> * {
   flex: 1 1 25%; 
   margin-right: 20px; 
-}
-
-.thanks-addr,
-.footer-nav{
-  margin-bottom: 20px; 
-}
-
-.footer-addr h2,
-.nav-title h2{
+  }
+  
+  .footer-addr h2,
+  .nav-title h2{
   font-size: 30px;
   font-weight: bolder;
   margin-bottom: 10px;
-}
-.footer-nav .nav-item .row {
+  }
+  .footer-nav .nav-item .row {
   display: flex;
   flex-direction: column;
-}
-.footer-nav .nav-item {
+  }
+  .footer-nav .nav-item {
   flex: 1; 
-  margin-right: 20px;
   margin-top:-20px;
-}
-.nav-ul {
+  }
+  .nav-ul {
   list-style: none;
   padding: 0;
-}
-
-.nav-ul li {
+  }
+  
+  .nav-ul li {
   margin-bottom: 10px;
-}
-
-.footer-nav li  {
+  }
+  
+  .footer-nav li  {
   list-style: none;
   text-decoration: none ;
   font-size: 20px;
   color: #090909;
-}
-
-
-.thanks-addr,
-.footer-nav {
+  }
+  
+  
+  .thanks-addr,
+  .footer-nav {
   flex: 1;
-  margin-right: 20px; 
-}
-.footer-thanks p{
-font-size: 25px;
-color: rgb(0, 0, 0);
-font-family: 'Dancing Script', cursive;
-
-}
-.footer-thanks h1{
-font-family: 'Dancing Script', cursive;
-font-weight: bolder;
-font-size: 35px;
-}
-.thanks-addr {
+  }
+  .footer-thanks p{
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+  font-family: 'Dancing Script', cursive;
+  
+  }
+  .footer-thanks h1{
+  font-family: 'Dancing Script', cursive;
+  font-weight: bolder;
+  font-size: 35px;
+  }
+  .thanks-addr {
   display: flex;
   flex-direction: column;
-}
-
-.footer-nav {
+  }
+  
+  .footer-nav {
   display: flex;
   flex-wrap: wrap;
-}
-.nav-item {
+  }
+  .nav-item {
   flex: 1;
   margin-bottom: 20px;
-}
-p{
-font-size: 18px;
-}
-.footer-add{
+  }
+  p{
+  font-size: 18px;
+  }
+  .footer-add{
   margin-top: 20px;
-}
-.legal {
+  }
+  .legal {
   flex-basis: calc(100% - 40px); 
   font-size: 18px;
-}
-.footer-nav a{
+  }
+  .footer-nav a{
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-size: 18px;
+  }
+  .nav-item .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  }
+  .nav-item .row img {
+  border: 1px solid #088178;
+  border-radius: 6px;
+  width: 146px;
+  }
+/* điều chỉnh giao diện tablet */
+@media (max-width:1200px){
+  #header > a{
+    font-size: 35px;
+  }
+  .menu-list li a{
+    font-size: 20px;
+  }
 }
-.nav-item .row {
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-wrap: wrap;
-}
-.nav-item .row img {
-border: 1px solid #088178;
-border-radius: 6px;
-width: 146px;
-}
-
 /* Điều chỉnh giao diện header khi màn hình nhỏ hơn 780px */
 @media (max-width: 780px) {
   #header{
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: relative;
   }
   .mobile {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: relative;
+  }
+  .mobile .icons{
+    display: flex;
+  }
+  .mobile .icons #xmark{
+    display: none;
   }
   .mobile div i{
     text-align: right;
@@ -300,14 +314,17 @@ width: 146px;
     margin-bottom: 10px; 
   }
   #xmark{
-    display: initial;
+    display: none;
     position: absolute;
-    padding: 16px;
+    width: 30px;
     top: 0;
-    left: 11px;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
-    color: #088178;
+    z-index: 2;
+  }
+  #bar.active ~ #xmark,
+  .menu-list.active #xmark{
+    display: initial;
   }
   .menu-list li{
     display: none;
@@ -317,16 +334,23 @@ width: 146px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    top: 42px;
+    /* left: 0; */
+    /* width: 100%; */
+    width: 250px;
+    right: 0;
+    z-index: 1;
   }
   .menu-list.active li:nth-child(n+1):nth-child(-n+5){
     position: relative;
     display: block;
-    width: 200px;
-    text-align: center;
-    top: 150px; 
+    width: 250px;
+    text-align: right;
+    top: 0;
     right: 0;
-    background-color:#f62213f9;
-    z-index: 1;
+    background-color:red;
+    /* z-index: 1; */
   }
   .menu-list li:nth-last-child(-n+2){
     display: none;
@@ -371,11 +395,13 @@ width: 146px;
     height: 250px;
   }
 }
-  /* Điều chỉnh giao diện footer khi màn hình nhỏ hơn 780px */
+ /* Điều chỉnh giao diện footer khi màn hình nhỏ hơn 780px */
 @media (max-width: 780px) {
   .footer {
     padding: 5px;
-    padding-left: 10px
+    padding-left: 10px;
+    display:flex;
+    flex-direction: column;
   }
   
   .footer-nav,.thanks-addr {
@@ -400,14 +426,24 @@ width: 146px;
     display: flex;
     flex-direction: column;
   }
-.nav-item .row img{
+  .nav-item .row img{
     flex: 1 1 100%;
-}
-.nav-item .row{
-    width: 40%;
+  }
+  .nav-item .row{
+    width: 20%;
     align-items: flex-start;
-}
-.nav-item
+  }
+  .nav-item a img{
+    width:40%
+  }
+  .footer-thanks h1{
+    padding: 0.5em 0;
+  }
+  .footer-addr h2, .nav-item h2{
+    padding: 0.5em 0;
+    margin: 0;
+  }
+  .nav-item
   .footer-nav p{
     font-size: 18px;
   }
@@ -426,7 +462,7 @@ width: 146px;
   .footer h1{
     font-size: 30px;
   }
-}
+  }
 /* Ẩn .mobile và #bar khi màn hình lớn hơn 768px */
 @media (min-width: 781px) {
   .mobile {
