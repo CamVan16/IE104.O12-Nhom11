@@ -1,16 +1,21 @@
+@font-face {
+  font-family: roboto;
+  src: url(./Roboto-Regular.ttf);
+}
 *{
     width: 100%;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: roboto;
 }
 body{
     display: block;
+    background-color: rgb(249, 239, 226);
 }
 /* ----------------navbar------------ */
 #header{
-    background-color: rgb(179, 41, 78);
+    background-color: black;
     width: 100%;
     height: 70px;
     display: flex;
@@ -25,7 +30,7 @@ body{
     padding: 4px 20px;
 }
 #header a{
-  color: palegoldenrod;
+  color: white;
 }
 #header > a{
   width: 50%;
@@ -33,7 +38,7 @@ body{
   text-decoration: none;
 }
 #header i{
-  color: palegoldenrod;
+  color: white;
 }
 .menu-list{
   display: flex;
@@ -60,7 +65,7 @@ body{
 }
 .menu-list li a:hover,
 .menu-list li a.active {
-  border-bottom: 2px solid palegoldenrod;
+  border-bottom: 2px solid white;
 }
 #xmark{
   display: none;
@@ -98,8 +103,44 @@ body{
   height: 50px;
 }
 /* -----------------section-body---------------- */
-#body{
+.favorite{
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+}
+.favorite p:first-child{
+  font-size: 40px;
+}
+.favorite p:last-child{
+  font-size: 20px;
+  padding-top: 5px;
+}
+.list-fav{
   height: 1000px;
+}
+.new-product{
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+}
+.new-product p:first-child{
+  font-size: 40px;
+}
+.new-product p:nth-child(2){
+  font-size: 20px;
+  padding-top: 5px;
+}
+.new-product button{
+  width: 10%;
+  height: 40px;
+  font-size: 18px;
+  background-color: black;
+  text-align: center;
+  margin-top: 5px;
+}
+.new-product a{
+  text-decoration: none;
+  color: white;
 }
 /* --------------section-banner---------------- */
 
@@ -164,7 +205,6 @@ body{
   background-color: #fff;
   border-top: 1px solid #e5e5e5;
   background-color: #ccc; 
-  
   }
   
   .footer-btn {
@@ -227,13 +267,10 @@ body{
   flex: 1;
   }
   .footer-thanks p{
-  font-size: 25px;
+  font-size: 20px;
   color: rgb(0, 0, 0);
-  font-family: 'Dancing Script', cursive;
-  
   }
   .footer-thanks h1{
-  font-family: 'Dancing Script', cursive;
   font-weight: bolder;
   font-size: 35px;
   }
@@ -336,8 +373,6 @@ body{
     align-items: center;
     position: absolute;
     top: 42px;
-    /* left: 0; */
-    /* width: 100%; */
     width: 250px;
     right: 0;
     z-index: 1;
@@ -349,8 +384,8 @@ body{
     text-align: right;
     top: 0;
     right: 0;
-    background-color:red;
-    /* z-index: 1; */
+    background-color: black;
+    border: 1px solid white;
   }
   .menu-list li:nth-last-child(-n+2){
     display: none;
